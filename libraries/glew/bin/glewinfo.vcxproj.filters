@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glew\glew-2.1.0\glew-2.1.0\src\glewinfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glew\glew-2.1.0\glew-2.1.0\build\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glew\glew-2.1.0\glew-2.1.0\build\glewinfo.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2CFDFF5A-E8DA-3B70-91C9-A4A2F89E9D14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

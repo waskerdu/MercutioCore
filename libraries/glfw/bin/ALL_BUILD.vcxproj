@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B6E8C85-602F-3B01-8193-4D15681B3B1B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1" "-BC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin" --check-stamp-file "C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeRCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeSystem.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\feature_tests.c;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMake\modules\FindVulkan.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\cmake_uninstall.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3.pc.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3Config.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw_config.h.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1" "-BC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin" --check-stamp-file "C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeRCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeSystem.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\feature_tests.c;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMake\modules\FindVulkan.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\cmake_uninstall.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3.pc.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3Config.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw_config.h.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1" "-BC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin" --check-stamp-file "C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeRCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeSystem.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\feature_tests.c;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMake\modules\FindVulkan.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\cmake_uninstall.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3.pc.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3Config.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw_config.h.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1" "-BC:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin" --check-stamp-file "C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeRCCompiler.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\3.13.2\CMakeSystem.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\feature_tests.c;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMake\modules\FindVulkan.cmake;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\cmake_uninstall.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3.pc.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw3Config.cmake.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\src\glfw_config.h.in;C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\ZERO_CHECK.vcxproj">
+      <Project>{F7D3E986-A9C2-3E32-8A2B-D7F4307C484F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\boing.vcxproj">
+      <Project>{6051EE53-734F-38C8-9A33-EC98FFD23AF7}</Project>
+      <Name>boing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\clipboard.vcxproj">
+      <Project>{6205A8CD-D4AC-34C3-B9F1-B43ED9B15FCD}</Project>
+      <Name>clipboard</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\cursor.vcxproj">
+      <Project>{EAF36D2F-6F75-3423-A34C-B6FDC0A1D860}</Project>
+      <Name>cursor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\empty.vcxproj">
+      <Project>{143BF08B-24B4-3FFF-9ADF-C9302C8A6F93}</Project>
+      <Name>empty</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\events.vcxproj">
+      <Project>{FE6D3B45-37F7-3AF3-B224-26849737198E}</Project>
+      <Name>events</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\gamma.vcxproj">
+      <Project>{571EBC89-6A26-32C2-B584-72D3F5DD358A}</Project>
+      <Name>gamma</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\gears.vcxproj">
+      <Project>{5339E4B1-CE91-3EEC-82E0-1AEC7A0B208E}</Project>
+      <Name>gears</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\src\glfw.vcxproj">
+      <Project>{AA438E90-C745-314E-8900-5C3758DABF29}</Project>
+      <Name>glfw</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\glfwinfo.vcxproj">
+      <Project>{229D98E5-C6DC-3B76-A6AD-F6B2BFB521C2}</Project>
+      <Name>glfwinfo</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\heightmap.vcxproj">
+      <Project>{A13B7AA6-0B74-3C5B-A22A-E5139CDD8DE3}</Project>
+      <Name>heightmap</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\icon.vcxproj">
+      <Project>{8ACF3D95-7D91-3AF3-B7E6-FFA6B0296411}</Project>
+      <Name>icon</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\iconify.vcxproj">
+      <Project>{1403ABD6-EF1F-3B2C-92A2-43DB73323BC5}</Project>
+      <Name>iconify</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\joysticks.vcxproj">
+      <Project>{532CCA43-6260-34AD-BF88-697CABBC5021}</Project>
+      <Name>joysticks</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\monitors.vcxproj">
+      <Project>{24EE61FA-8831-31E7-889A-56FEB896A87E}</Project>
+      <Name>monitors</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\msaa.vcxproj">
+      <Project>{3B36F736-D1D2-354E-A7FD-55210622A334}</Project>
+      <Name>msaa</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\particles.vcxproj">
+      <Project>{FA746F39-0C98-3E2F-9212-023C6ACB16E1}</Project>
+      <Name>particles</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\reopen.vcxproj">
+      <Project>{11B4292B-35FB-31FD-A2B4-787FE76D8885}</Project>
+      <Name>reopen</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\sharing.vcxproj">
+      <Project>{8F512C8F-8880-3F08-A654-1F6CFFDC0341}</Project>
+      <Name>sharing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\simple.vcxproj">
+      <Project>{5C82BBB3-AF18-32E9-B428-8A1B94B1277E}</Project>
+      <Name>simple</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\splitview.vcxproj">
+      <Project>{10794718-B68C-3662-963C-B72D0FE87F99}</Project>
+      <Name>splitview</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\tearing.vcxproj">
+      <Project>{E168A230-A5CC-3AE9-989D-050AC8E026A5}</Project>
+      <Name>tearing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\threads.vcxproj">
+      <Project>{6191B128-C109-337C-9715-0BC2EAA74AA7}</Project>
+      <Name>threads</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\timeout.vcxproj">
+      <Project>{BF4C8B3E-8163-303C-9F64-5C222B97E394}</Project>
+      <Name>timeout</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\title.vcxproj">
+      <Project>{A1980C20-9075-370F-B461-DA71BF5F7780}</Project>
+      <Name>title</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\wave.vcxproj">
+      <Project>{F4842797-E96D-3C46-9B48-6613766568A5}</Project>
+      <Name>wave</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\windows.vcxproj">
+      <Project>{E331E1EE-0816-3574-B209-B65E97C31DE5}</Project>
+      <Name>windows</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\e3066c1b65b0a5f759e09b84b8c4a1e8\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\glfw-3.2.1 (1)\glfw-3.2.1\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F9C13982-FCA5-3C68-BED9-79DF47668FEC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

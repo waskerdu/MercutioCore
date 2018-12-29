@@ -1,0 +1,8 @@
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/glewinfo.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/glew.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/glew_s.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/uninstall.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/visualinfo.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/ALL_BUILD.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glew/bin/CMakeFiles/ZERO_CHECK.dir

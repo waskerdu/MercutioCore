@@ -1,0 +1,32 @@
+﻿  Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/SFML-2.5.1-sources/SFML-2.5.1/src/SFML/Window/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Window/CMakeFiles/generate.stamp is up-to-date.
+  Clipboard.cpp
+  Context.cpp
+  Cursor.cpp
+  GlContext.cpp
+  GlResource.cpp
+  Joystick.cpp
+  JoystickManager.cpp
+  Keyboard.cpp
+  Mouse.cpp
+  Touch.cpp
+  Sensor.cpp
+  SensorManager.cpp
+  VideoMode.cpp
+  Window.cpp
+  WindowImpl.cpp
+  CursorImpl.cpp
+  ClipboardImpl.cpp
+  WglContext.cpp
+  WglExtensions.cpp
+  InputImpl.cpp
+  Generating Code...
+  Compiling...
+  JoystickImpl.cpp
+  SensorImpl.cpp
+  VideoModeImpl.cpp
+  WindowImplWin32.cpp
+  Generating Code...
+     Creating library C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/lib/Debug/sfml-window-d.lib and object C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/lib/Debug/sfml-window-d.exp
+  sfml-window.vcxproj -> C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\sfml\bin\lib\Debug\sfml-window-d-2.dll
+  sfml-window.vcxproj -> C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/lib/Debug/sfml-window.pdb (Full PDB)
