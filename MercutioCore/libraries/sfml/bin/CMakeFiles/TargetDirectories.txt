@@ -1,0 +1,16 @@
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/CMakeFiles/ALL_BUILD.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/System/CMakeFiles/sfml-system.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/System/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Main/CMakeFiles/sfml-main.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Main/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Window/CMakeFiles/sfml-window.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Window/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Network/CMakeFiles/sfml-network.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Network/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Graphics/CMakeFiles/INSTALL.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Audio/CMakeFiles/sfml-audio.dir
+C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/bin/src/SFML/Audio/CMakeFiles/INSTALL.dir
