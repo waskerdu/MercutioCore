@@ -11,17 +11,19 @@ The user should not be expected to duplicate the same CreateNew code in every cl
 template <class T>
 T* CreateNew(T* source)
 {
-	return new T(*source);
+	T* temp = new T(*source);
+	int i = 0;
+	return (temp);
+	//return new T(*source);
 }
 template <class T>
 void Copy(T* source, T* dest)
 {
 	*dest = *source;
-	dest->children.clear();
-	for (unsigned int i = 0; i < source->children.size(); i++)
+	dest->RemoveAllChildren();
+	for (size_t i = 0; i < source->ChildCount(); i++)
 	{
-		dest->children.push_back(Instantiate(source->children[i]));
-		copy->children.back()->parent = dest;
+		dest->AddChild(dest->Instantiate( source->GetChildAt(i) ));
 	}
 }
 /*

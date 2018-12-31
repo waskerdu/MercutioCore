@@ -9,7 +9,7 @@ class Entity
 {
 	//private fields
 	Entity* parent;
-	
+	std::vector<Entity*> children;
 	std::map<std::string, uint32_t> registeredMessages;
 	Transform transform;
 	bool isFreed = false;
@@ -20,7 +20,7 @@ class Entity
 	MemoryManager* memoryManager;
 public:
 	//public fields (minimize/eliminate)
-	std::vector<Entity*> children; //should be private but templates in mem manager get grumpy
+	
 private:
 	//private methods
 	void SetAwakeInternal(bool wake);
@@ -28,17 +28,21 @@ private:
 protected:
 	//protected methods
 	void AddMessage(std::string message, uint32_t index);
-	void Instantiate(Entity* ent); //asks the memory manager for a new instance of a given entity
 
 public:
 	//public methods
-	void SetParent(Entity* newParent);
+	Entity* Instantiate(Entity* ent); //asks the memory manager for a new instance of a given entity
+	void SetParent(Entity* newParent = nullptr);
 	void AddChild(Entity* newChild);
+	Entity* GetChildAt(uint32_t index);
 	void RemoveChild(Entity* child);
 	void RemoveChildAt(uint32_t index);
+	void RemoveAllChildren();
+	size_t ChildCount();
 	void SendMessage(std::string message, void* messageData = nullptr); //other objects call this method to send messages to this entity
 	void SetAwake(bool awake);
 	bool IsAwake();
+	void Free();
 	
 	//virtual methods
 	virtual void Awake() {} // runs each time the entity is "woken up"

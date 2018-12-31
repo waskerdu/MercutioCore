@@ -16,15 +16,17 @@ void Entity::AddMessage(std::string message, uint32_t index)
 	registeredMessages.emplace(message, index);
 }
 
-void Entity::Instantiate(Entity* ent)
+Entity* Entity::Instantiate(Entity* ent)
 {
-	//talk to memory manager
-
+	return (Entity*)memoryManager->Instantiate(ent);
 }
 
 void Entity::SetParent(Entity* newParent)
 {
-	parent->RemoveChild(this);
+	if (parent != nullptr)
+	{
+		parent->RemoveChild(this);
+	}
 	parent = newParent;
 }
 
@@ -32,6 +34,11 @@ void Entity::AddChild(Entity* newChild)
 {
 	children.push_back(newChild);
 	newChild->parent = this;
+}
+
+Entity* Entity::GetChildAt(uint32_t index)
+{
+	return children[index];
 }
 
 void Entity::RemoveChild(Entity* child)
@@ -53,6 +60,20 @@ void Entity::RemoveChildAt(uint32_t index)
 	children.erase(children.begin() + index);
 }
 
+void Entity::RemoveAllChildren()
+{
+	for (size_t i = 0; i < children.size(); i++)
+	{
+		children[i]->SetParent();
+	}
+	children.clear();
+}
+
+size_t Entity::ChildCount()
+{
+	return children.size();
+}
+
 void Entity::SendMessage(std::string message, void* messageData)
 {
 	if (registeredMessages.count(message) == 0)
@@ -72,6 +93,11 @@ void Entity::SetAwake(bool awake)
 bool Entity::IsAwake()
 {
 	return isAwake && lastWakeState && privateAwakeState;
+}
+
+void Entity::Free()
+{
+	isFreed = true;
 }
 
 Entity::Entity()
