@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.13/Modules/FindOpenGL.cmake
-C:/Program Files/CMake/share/cmake-3.13/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.13/Modules/FindPackageMessage.cmake
-C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/sfml/SFML-2.5.1-sources/SFML-2.5.1/src/SFML/Window/CMakeLists.txt

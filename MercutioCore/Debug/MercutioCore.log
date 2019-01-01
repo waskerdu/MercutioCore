@@ -1,3 +1,10 @@
-﻿  MercutioCore.cpp
-  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.exe
-  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.pdb (Full PDB)
+﻿  stdafx.cpp
+  meRenderer.cpp
+  MercutioCore.cpp
+  meMemoryManager.cpp
+  meEntity.cpp
+  meEngine.cpp
+  meDisplayManager.cpp
+  meAssetManager.cpp
+  Generating Code...
+  MercutioCore.vcxproj -> C:\Users\Riley\documents\visual studio 2015\Projects\MercutioCore\Debug\MercutioCore.exe

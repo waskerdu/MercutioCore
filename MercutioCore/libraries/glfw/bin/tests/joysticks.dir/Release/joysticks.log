@@ -1,6 +1,0 @@
-﻿  Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/tests/CMakeLists.txt
-  CMake does not need to re-run because C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/tests/CMakeFiles/generate.stamp is up-to-date.
-  joysticks.c
-  glad.c
-  Generating Code...
-  joysticks.vcxproj -> C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\tests\Release\joysticks.exe

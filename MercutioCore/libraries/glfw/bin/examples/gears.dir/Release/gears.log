@@ -1,6 +1,0 @@
-﻿  Building Custom Rule C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/glfw-3.2.1 (1)/glfw-3.2.1/examples/CMakeLists.txt
-  CMake does not need to re-run because C:/Users/Riley/Documents/Visual Studio 2015/Projects/MercutioCore/libraries/glfw/bin/examples/CMakeFiles/generate.stamp is up-to-date.
-  gears.c
-  glad.c
-  Generating Code...
-  gears.vcxproj -> C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\libraries\glfw\bin\examples\Release\gears.exe
