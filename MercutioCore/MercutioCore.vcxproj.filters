@@ -36,9 +36,6 @@
     <ClInclude Include="meTransform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="meEntityUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="meMemoryManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>

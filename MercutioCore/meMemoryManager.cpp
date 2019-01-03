@@ -3,7 +3,6 @@
 #include <typeinfo>
 #include <iostream>
 #include "meEntity.h"
-#include "meEntityUtils.h"
 
 MemoryManager::MemoryManager()
 {
@@ -43,15 +42,12 @@ void* MemoryManager::Instantiate(void* e)
 		{
 			//copy into tempEnt and return it
 			tempEnt->isFreed = false;
-
-			Copy(ent, tempEnt);
-
+			tempEnt->Copy(ent);
 			//std::cout << "reused\n";
 			return tempEnt;
 		}
 	}
-	//tempEnt = ent->Copy();
-	tempEnt = (Entity*)CreateNew(ent);
+	tempEnt = ent->New();
 	tempEnt->memoryManager = this;
 	pools[name]->push_back(tempEnt);
 	std::cout << "created new " << name << "\n";

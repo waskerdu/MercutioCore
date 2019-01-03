@@ -11,9 +11,28 @@ void Entity::SetAwakeInternal(bool awake)
 	}
 }
 
+Entity* Entity::New()
+{
+	return new Entity();
+}
+void Entity::Copy(Entity* source)
+{
+	*this = *source;
+	CopyChildren(source);
+}
+
 void Entity::AddMessage(std::string message, uint32_t index)
 {
 	registeredMessages.emplace(message, index);
+}
+
+void Entity::CopyChildren(Entity* source)
+{
+	this->RemoveAllChildren();
+	for (size_t i = 0; i < source->ChildCount(); i++)
+	{
+		this->AddChild(source->Instantiate(source->GetChildAt(i)));
+	}
 }
 
 Entity* Entity::Instantiate(Entity* ent)

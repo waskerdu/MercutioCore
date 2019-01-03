@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <iostream>
 #include "meTransform.h"
 #include "meMemoryManager.h"
 
@@ -18,16 +19,47 @@ class Entity
 	bool privateAwakeState = true; //used to 
 	friend class MemoryManager;
 	MemoryManager* memoryManager;
+
 public:
 	//public fields (minimize/eliminate)
 	
 private:
 	//private methods
 	void SetAwakeInternal(bool wake);
+	
+	//private virtual methods
+
+	//Every subclass of entity MUST impliment these methods or object slicing will occur.
+	//It would be great if there was a less stupid way of doing this.
+	virtual Entity* New();
+	virtual void Copy(Entity* source);
+	/*
+	The following can be copied into the source straightforwardly.
+	Replace {Type} with the name of the subclass.
+	In the future this might be done with a fancy macro.
+	In the future there will be a utility to ensure these methods are implimented.
+
+	In header:
+	virtual {Type}* New();
+	virtual void Copy();
+
+	In cpp:
+	Entity* {Type}::New()
+	{
+		return new Entity();
+	}
+	void {Type}::Copy(Entity* source)
+	{
+		{Type}* temp = dynamic_cast<{Type}*>(source);
+		*this = *source;
+		CopyChildren(source);
+	}
+	*/
 
 protected:
 	//protected methods
 	void AddMessage(std::string message, uint32_t index);
+	void CopyChildren(Entity* source);
 
 public:
 	//public methods
@@ -45,7 +77,7 @@ public:
 	void Free();
 	
 	//virtual methods
-	virtual void Awake() {} // runs each time the entity is "woken up"
+	virtual void Awake() {} // is called each time the entity is "woken up"
 	virtual void Update() {} // is called every frame by the engine
 	virtual void FixedUpdate() {} //is called by the engine at set intervals
 	virtual void ProcessMessage(uint32_t index, void* messageData = nullptr) {} // interprets messages other objects send to this one

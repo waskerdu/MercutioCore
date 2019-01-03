@@ -167,7 +167,6 @@
     <ClInclude Include="meDisplayManager.h" />
     <ClInclude Include="meEngine.h" />
     <ClInclude Include="meEntity.h" />
-    <ClInclude Include="meEntityUtils.h" />
     <ClInclude Include="meMath.h" />
     <ClInclude Include="meMemoryManager.h" />
     <ClInclude Include="meRenderer.h" />
