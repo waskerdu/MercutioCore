@@ -1,10 +1,9 @@
-﻿  stdafx.cpp
-  meRenderer.cpp
-  MercutioCore.cpp
-  meMemoryManager.cpp
-  meEntity.cpp
+﻿  meMemoryManager.cpp
   meEngine.cpp
-  meDisplayManager.cpp
-  meAssetManager.cpp
+  meClock.cpp
+  Generating Code...
+  Compiling...
+  MercutioCore.cpp
+  meEntity.cpp
   Generating Code...
   MercutioCore.vcxproj -> C:\Users\Riley\documents\visual studio 2015\Projects\MercutioCore\Debug\MercutioCore.exe

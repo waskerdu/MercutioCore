@@ -13,10 +13,13 @@ class Entity
 	std::vector<Entity*> children;
 	std::map<std::string, uint32_t> registeredMessages;
 	Transform transform;
-	bool isFreed = false;
+	bool isFreed = true;
 	bool isAwake = true;
 	bool lastWakeState = false; // whether the entity was awake last frame
 	bool privateAwakeState = true; //used to 
+	friend class Engine;
+	//engine handles
+	double deltaTime;
 	friend class MemoryManager;
 	MemoryManager* memoryManager;
 

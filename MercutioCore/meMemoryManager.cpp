@@ -43,6 +43,7 @@ void* MemoryManager::Instantiate(void* e)
 			//copy into tempEnt and return it
 			tempEnt->isFreed = false;
 			tempEnt->Copy(ent);
+			initQueue.push_back(tempEnt);
 			//std::cout << "reused\n";
 			return tempEnt;
 		}
@@ -50,6 +51,21 @@ void* MemoryManager::Instantiate(void* e)
 	tempEnt = ent->New();
 	tempEnt->memoryManager = this;
 	pools[name]->push_back(tempEnt);
+	initQueue.push_back(tempEnt);
 	std::cout << "created new " << name << "\n";
 	return tempEnt;
+}
+
+void MemoryManager::AllocatePool(void* e, size_t num)
+{
+	//Should size the pool according to num. Will probably need to be done with calloc
+	//Allocating a vector of entities isn't good enough because subclasses will be bigger
+	//Need to find the biggest possible subclass, which will obviously vary by project
+	Entity* ent = (Entity*)e;
+	std::string name = typeid(*ent).name();
+	if (pools.count(name) == 0)
+	{
+		//create a new pool
+		pools[name] = new std::vector<void*>();
+	}
 }

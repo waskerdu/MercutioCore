@@ -51,6 +51,9 @@
     <ClInclude Include="meRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="meClock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="meRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meClock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="meAssetManager.h" />
+    <ClInclude Include="meClock.h" />
     <ClInclude Include="meDisplayManager.h" />
     <ClInclude Include="meEngine.h" />
     <ClInclude Include="meEntity.h" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="meAssetManager.cpp" />
+    <ClCompile Include="meClock.cpp" />
     <ClCompile Include="meDisplayManager.cpp" />
     <ClCompile Include="meEngine.cpp" />
     <ClCompile Include="meEntity.cpp" />
