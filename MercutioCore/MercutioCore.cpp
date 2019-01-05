@@ -41,10 +41,7 @@ int main()
 	std::cout << entities.size() << "\n";
 	int i;
 	std::cin >> i;
-
-	Engine engine;
-	engine.Launch();
-
+	
 	Ini ini;
 	ini.Load("gamefiles/test.ini");
 	ini.Set("test2", "plort", "fred");
@@ -55,8 +52,11 @@ int main()
 	std::cout << ini.GetDouble("test", "sum") << "\n";
 	ini.Save("gamefiles/testout.ini");*/
 
-	int i = 0;
-	std::cin >> i;
+	Engine engine;
+	engine.Launch();
+
+	//int i = 0;
+	//std::cin >> i;
 	return 0;
 }
 

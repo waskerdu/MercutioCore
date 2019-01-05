@@ -5,23 +5,34 @@
 #include <GL\glew.h>
 #include <GL\GL.h>
 #include <GLFW\glfw3.h>
+#include "meIni.h"
 
 void Engine::Launch()
 {
 	glfwInit();
-	testWindow = glfwCreateWindow(640, 480, "test window", NULL, NULL);
-	//read init.ini
+	//testWindow = glfwCreateWindow(640, 480, "test window", NULL, NULL);
+	//if settings.ini does not exist create it
+
+	//read settings.ini
+	Ini settings;
+	settings.Load("gamedata/settings.ini");
+	displayManager.Init(
+		settings.Get("window", "mode") == "windowed",
+		(size_t)settings.GetInt("window", "width"),
+		(size_t)settings.GetInt("window", "height"),
+		(size_t)settings.GetInt("window", "monitor")
+		);
 
 	//start game loop
 	while (gameRunning)
 	{
 		Update();
 		glfwPollEvents();
-		if (glfwGetKey((GLFWwindow*)testWindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (glfwGetKey(displayManager.GetWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
 			gameRunning = false;
 		}
-		glfwSwapBuffers((GLFWwindow*)testWindow);
+		glfwSwapBuffers(displayManager.GetWindow());
 	}
 	
 	glfwTerminate();
