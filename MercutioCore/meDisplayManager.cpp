@@ -1,26 +1,54 @@
 #include "stdafx.h"
 #include "meDisplayManager.h"
+#include <iostream>
 
-void DisplayManager::Init(bool windowed, size_t x, size_t y, size_t monitor, const char* title)
+//void DisplayManager::Init(bool windowed, size_t x, size_t y, size_t monitor, const char* title)
+void DisplayManager::Init(Ini* ini)
 {
 	//
-	monitors = glfwGetMonitors(&numMonitors);
-	if (windowed)
+	this->ini = ini;
+	if (ini->Get("window", "mode") == "windowed")
 	{
-		window = glfwCreateWindow(x, y, title, NULL, NULL);
-		mode.x = x;
-		mode.y = y;
 		mode.mode = DisplayMode::window;
 	}
 	else
 	{
-		window = glfwCreateWindow(x, y, title, monitors[monitor], NULL);
-		mode.x = x;
-		mode.y = y;
 		mode.mode = DisplayMode::fullscreen;
 	}
+	mode.width = (size_t)ini->GetInt("window", "width");
+	mode.height = (size_t)ini->GetInt("window", "height");
+	mode.monitor = (size_t)ini->GetInt("window", "monitor");
+	mode.refreshRate = ini->GetDouble("window", "refreshRate");
+	tempMode = mode;
+	lastChanceMode = mode;
+	std::string title = ini->Get("window", "title");
+	monitors = glfwGetMonitors(&numMonitors);
+	std::cout << "get here " << numMonitors << "\n";
+	int count;
+	const GLFWvidmode* modes;
+	for (size_t i = 0; i < (size_t)numMonitors; i++)
+	{
+		modes = glfwGetVideoModes(monitors[i], &count);
+		for (size_t f = 0; f < (size_t)count; f++)
+		{
+			monitorIndicies.push_back(i);
+			monitorStrings.push_back(std::to_string(i));
+			refreshRates.push_back(modes[f].refreshRate);
+			refreshRateStrings.push_back(std::to_string(modes[f].refreshRate));
+			resolutions.push_back(std::pair<size_t, size_t>(modes[f].width, modes[f].height));
+			resolutionStrings.push_back(std::to_string(modes[f].width) + " " + std::to_string(modes[f].height));
+		}
+	}
+	if (mode.mode == DisplayMode::window)
+	{
+		window = glfwCreateWindow(mode.width, mode.height, title.c_str(), NULL, NULL);
+	}
+	else
+	{
+		window = glfwCreateWindow(mode.width, mode.height, title.c_str(), monitors[mode.monitor], NULL);
+	}
 	glfwMakeContextCurrent(window);
-	glViewport(0, 0, x, y);
+	glViewport(0, 0, mode.width, mode.height);
 	GLenum err = glewInit();
 	if (GLEW_OK != err)
 	{
@@ -31,33 +59,61 @@ void DisplayManager::Init(bool windowed, size_t x, size_t y, size_t monitor, con
 	fprintf(stdout, "Renderer: %s\n", glGetString(GL_RENDERER));
 }
 
-void DisplayManager::SetMode(DisplayMode* mode)
-{
-	//
-}
-
 GLFWwindow* DisplayManager::GetWindow()
 {
 	return window;
 }
 
-std::vector<DisplayMode>* DisplayManager::GetModes()
+std::vector<std::string>* DisplayManager::GetResolutions()
 {
-	return &avalibleModes;
+	return &resolutionStrings;
+}
+std::vector<std::string>* DisplayManager::GetMonitors()
+{
+	return &monitorStrings;
+}
+std::vector<std::string>* DisplayManager::GetRefreshRates()
+{
+	return &refreshRateStrings;
 }
 
-DisplayMode* DisplayManager::GetMode()
+void DisplayManager::SetResolution(size_t index)
+{
+	tempMode.width = resolutions[index].first;
+	tempMode.height = resolutions[index].second;
+}
+void DisplayManager::SetMonitor(size_t index)
+{
+	tempMode.monitor = index;
+}
+void DisplayManager::SetRefreshRate(size_t index)
+{
+	tempMode.refreshRate = refreshRates[index];
+}
+void DisplayManager::SaveChanges()
+{
+	lastChanceMode = mode;
+	if (mode.mode == DisplayMode::window)
+	{
+		ini->Set("window", "mode", "windowed");
+	}
+	else
+	{
+		ini->Set("window", "mode", "fullscreen");
+	}
+	ini->Set("window", "width", (int64_t)mode.width);
+	ini->Set("window", "height", (int64_t)mode.height);
+	ini->Set("window", "monitor", (int64_t)mode.monitor);
+	ini->Set("window", "refreshRate", (double)mode.refreshRate);
+	ini->Save();
+}
+void DisplayManager::StageChanges()
+{
+	mode = tempMode;
+}
+DisplayMode* DisplayManager::GetCurrentMode()
 {
 	return &mode;
-}
-size_t DisplayManager::GetWindowWidth()
-{
-	return mode.x;
-}
-
-size_t DisplayManager::GetWindowHeight()
-{
-	return mode.y;
 }
 
 DisplayManager::DisplayManager()

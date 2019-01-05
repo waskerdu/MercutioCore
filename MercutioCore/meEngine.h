@@ -35,6 +35,7 @@ public:
 
 private:
 	//private methods
+	void TerminalOptionsMenu();
 
 protected:
 	//protected methods

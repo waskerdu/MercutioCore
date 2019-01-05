@@ -7,21 +7,75 @@
 #include <GLFW\glfw3.h>
 #include "meIni.h"
 
+void Engine::TerminalOptionsMenu()
+{
+	std::cout << "OPTIONS\n\n";
+	bool inOptions = true;
+	while (inOptions)
+	{
+		std::cout << "[r] Resolution: " << displayManager.GetCurrentMode()->width <<
+			" x " << displayManager.GetCurrentMode()->height << "\n";
+		std::cout << "[m] Monitor: " << displayManager.GetCurrentMode()->monitor << "\n";
+		std::cout << "[w] Window Mode: ";
+		if (displayManager.GetCurrentMode()->mode == DisplayMode::window)
+		{
+			std::cout << "Windowed\n";
+		}
+		else
+		{
+			std::cout << "Fullscreen\n";
+		}
+		std::cout << "[e] Exit and Resume game\n";
+		std::cout << "Any other input Exits and Quits\n";
+		size_t i;
+		char input;
+		std::cin >> input;
+		
+		switch (input)
+		{
+		case('r') :
+			std::cout << displayManager.GetResolutions()->size();
+			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
+			{
+				std::cout << "[" << i << "] " << displayManager.GetResolutions()->at(i) << "\n";
+			}
+				  std::cin >> input;
+			break;
+		case('m') :
+			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
+			{
+				std::cout << "[" << i << "] ";
+			}
+				  std::cout << "\n";
+				  std::cin >> input;
+			break;
+		case('w') :
+			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
+			{
+				std::cout << "[0] windowed [1] fullscreen\n";
+			}
+				  std::cin >> input;
+			break;
+		case('e') :
+			inOptions = false;
+			break;
+		default:
+			inOptions = false;
+			gameRunning = false;
+			break;
+		}
+	}
+}
+
 void Engine::Launch()
 {
 	glfwInit();
-	//testWindow = glfwCreateWindow(640, 480, "test window", NULL, NULL);
 	//if settings.ini does not exist create it
 
 	//read settings.ini
 	Ini settings;
 	settings.Load("gamedata/settings.ini");
-	displayManager.Init(
-		settings.Get("window", "mode") == "windowed",
-		(size_t)settings.GetInt("window", "width"),
-		(size_t)settings.GetInt("window", "height"),
-		(size_t)settings.GetInt("window", "monitor")
-		);
+	displayManager.Init(&settings);
 
 	//start game loop
 	while (gameRunning)
@@ -30,7 +84,8 @@ void Engine::Launch()
 		glfwPollEvents();
 		if (glfwGetKey(displayManager.GetWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			gameRunning = false;
+			//gameRunning = false;
+			TerminalOptionsMenu();
 		}
 		glfwSwapBuffers(displayManager.GetWindow());
 	}
