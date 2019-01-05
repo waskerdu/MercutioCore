@@ -56,6 +56,7 @@ public:
 	void SetResolution(size_t index);
 	void SetMonitor(size_t index);
 	void SetRefreshRate(size_t index);
+	void SetMode(size_t index);
 	void SaveChanges();
 	void StageChanges();
 	DisplayMode* GetCurrentMode();

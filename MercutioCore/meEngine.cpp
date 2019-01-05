@@ -28,8 +28,10 @@ void Engine::TerminalOptionsMenu()
 		std::cout << "[e] Exit and Resume game\n";
 		std::cout << "Any other input Exits and Quits\n";
 		size_t i;
+		std::string in;
 		char input;
 		std::cin >> input;
+		size_t inputIndex;
 		
 		switch (input)
 		{
@@ -39,7 +41,17 @@ void Engine::TerminalOptionsMenu()
 			{
 				std::cout << "[" << i << "] " << displayManager.GetResolutions()->at(i) << "\n";
 			}
-				  std::cin >> input;
+				  std::cin >> in;
+				  try
+				  {
+					  inputIndex = std::stoi(in);
+					  displayManager.SetResolution(inputIndex);
+				  }
+				  catch (std::invalid_argument &e)
+				  {
+					  (void)e;
+					  std::cout << "Invalid input.\n";
+				  }
 			break;
 		case('m') :
 			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
@@ -47,14 +59,34 @@ void Engine::TerminalOptionsMenu()
 				std::cout << "[" << i << "] ";
 			}
 				  std::cout << "\n";
-				  std::cin >> input;
+				  std::cin >> in;
+				  try
+				  {
+					  inputIndex = std::stoi(in);
+					  displayManager.SetMonitor(inputIndex);
+				  }
+				  catch (std::invalid_argument &e)
+				  {
+					  (void)e;
+					  std::cout << "Invalid input.\n";
+				  }
 			break;
 		case('w') :
 			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
 			{
 				std::cout << "[0] windowed [1] fullscreen\n";
 			}
-				  std::cin >> input;
+				  std::cin >> in;
+				  try
+				  {
+					  inputIndex = std::stoi(in);
+					  displayManager.SetMode(inputIndex);
+				  }
+				  catch (std::invalid_argument &e)
+				  {
+					  (void)e;
+					  std::cout << "Invalid input.\n";
+				  }
 			break;
 		case('e') :
 			inOptions = false;
@@ -64,6 +96,8 @@ void Engine::TerminalOptionsMenu()
 			gameRunning = false;
 			break;
 		}
+		displayManager.StageChanges();
+		displayManager.SaveChanges();
 	}
 }
 

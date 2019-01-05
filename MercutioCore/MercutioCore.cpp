@@ -51,7 +51,7 @@ int main()
 	std::cout << ini.GetInt("test3", "tom") << "\n";
 	std::cout << ini.GetDouble("test", "sum") << "\n";
 	ini.Save("gamefiles/testout.ini");*/
-
+	// cd documents/"visual studio 2015"/projects/mercutiocore
 	Engine engine;
 	engine.Launch();
 
