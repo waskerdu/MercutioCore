@@ -3,6 +3,8 @@
 #include "meTestEnv.h"
 #include "meMemoryManager.h"
 #include "meEntity.h"
+#include "meEngine.h"
+#include "meIni.h"
 
 class Sub : public Entity
 {
@@ -23,7 +25,8 @@ public:
 
 int main()
 {
-	//TestEnv test;
+	/*TestEnv test;
+
 	std::vector<Entity*> entities;
 	MemoryManager memoryManager;
 	Sub prototype;
@@ -37,6 +40,22 @@ int main()
 	entities.push_back(ent);
 	std::cout << entities.size() << "\n";
 	int i;
+	std::cin >> i;
+
+	Engine engine;
+	engine.Launch();
+
+	Ini ini;
+	ini.Load("gamefiles/test.ini");
+	ini.Set("test2", "plort", "fred");
+	ini.Set("test2", "tom", "paris");
+	ini.Set("test3", "tom", "paris");
+	std::cout << ini.Get("test3", "tom") << "\n";
+	std::cout << ini.GetInt("test3", "tom") << "\n";
+	std::cout << ini.GetDouble("test", "sum") << "\n";
+	ini.Save("gamefiles/testout.ini");*/
+
+	int i = 0;
 	std::cin >> i;
 	return 0;
 }

@@ -1,16 +1,30 @@
 #include "stdafx.h"
 #include "meEngine.h"
 #include <time.h>
+#define GLEW_STATIC
+#include <GL\glew.h>
+#include <GL\GL.h>
+#include <GLFW\glfw3.h>
 
 void Engine::Launch()
 {
+	glfwInit();
+	testWindow = glfwCreateWindow(640, 480, "test window", NULL, NULL);
 	//read init.ini
 
 	//start game loop
 	while (gameRunning)
 	{
 		Update();
+		glfwPollEvents();
+		if (glfwGetKey((GLFWwindow*)testWindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		{
+			gameRunning = false;
+		}
+		glfwSwapBuffers((GLFWwindow*)testWindow);
 	}
+	
+	glfwTerminate();
 }
 void Engine::Update()
 {

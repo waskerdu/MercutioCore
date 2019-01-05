@@ -28,6 +28,8 @@ class Engine
 	double lastFixedUpdate = 0.0;
 	double fixedUpdateRate = 0.2;
 
+	void* testWindow;
+
 public:
 	//public fields (minimize/eliminate)
 

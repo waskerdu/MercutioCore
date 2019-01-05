@@ -168,6 +168,7 @@
     <ClInclude Include="meDisplayManager.h" />
     <ClInclude Include="meEngine.h" />
     <ClInclude Include="meEntity.h" />
+    <ClInclude Include="meIni.h" />
     <ClInclude Include="meMath.h" />
     <ClInclude Include="meMemoryManager.h" />
     <ClInclude Include="meRenderer.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="meDisplayManager.cpp" />
     <ClCompile Include="meEngine.cpp" />
     <ClCompile Include="meEntity.cpp" />
+    <ClCompile Include="meIni.cpp" />
     <ClCompile Include="meMemoryManager.cpp" />
     <ClCompile Include="MercutioCore.cpp" />
     <ClCompile Include="meRenderer.cpp" />
