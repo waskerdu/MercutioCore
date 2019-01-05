@@ -118,7 +118,6 @@ void Engine::Launch()
 		glfwPollEvents();
 		if (glfwGetKey(displayManager.GetWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			//gameRunning = false;
 			TerminalOptionsMenu();
 		}
 		glfwSwapBuffers(displayManager.GetWindow());
