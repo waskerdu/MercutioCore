@@ -1,9 +1,48 @@
-﻿  MercutioCore.cpp
-  meEntity.cpp
-  meMemoryManager.cpp
-  Generating code
-  0 of 567 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    5 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  MercutioCore.vcxproj -> C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\Release\MercutioCore.exe
+﻿  meAssetManager.cpp
+c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(15): error C2086: 'std::map<std::string,Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>> AssetManager::meshes': redefinition
+          with
+          [
+              _Kty=std::string,
+              _Ty=Mesh *
+          ]
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(14): note: see declaration of 'AssetManager::meshes'
+  meDisplayManager.cpp
+  meEngine.cpp
+c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(15): error C2086: 'std::map<std::string,Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>> AssetManager::meshes': redefinition
+          with
+          [
+              _Kty=std::string,
+              _Ty=Mesh *
+          ]
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(14): note: see declaration of 'AssetManager::meshes'
+  meIni.cpp
+meIni.cpp(72): error C2039: 'insert': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(110): error C2039: 'begin': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(110): error C2039: 'end': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(130): error C2039: 'count': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(135): error C2039: 'at': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(173): error C2039: 'insert': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(176): error C2039: 'count': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(178): error C2039: 'insert': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(181): error C2039: 'at': is not a member of 'Section'
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meIni.h(7): note: see declaration of 'Section'
+meIni.cpp(203): error C2143: syntax error: missing ';' before 'Ini::{ctor}'
+meIni.cpp(203): error C2761: 'void Ini::GetSection(std::string)': member function redeclaration not allowed
+  meMaterial.cpp
+  MercutioCore.cpp
+c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(15): error C2086: 'std::map<std::string,Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>> AssetManager::meshes': redefinition
+          with
+          [
+              _Kty=std::string,
+              _Ty=Mesh *
+          ]
+  c:\users\riley\documents\visual studio 2015\projects\mercutiocore\mercutiocore\meAssetManager.h(14): note: see declaration of 'AssetManager::meshes'
+  meRenderable.cpp

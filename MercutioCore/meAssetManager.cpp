@@ -3,17 +3,21 @@
 
 void AssetManager::Init()
 {
-	//
+	manifest.Load("gamedata/asset_manifest.ini");
 }
 void AssetManager::LoadPage(std::string name)
 {
 	//
 }
-void* AssetManager::GetMesh(std::string name)
+Mesh* AssetManager::GetMesh(std::string name)
 {
 	return nullptr;
 }
-void* AssetManager::GetMaterial(std::string name)
+Material* AssetManager::GetMaterial(std::string name)
+{
+	return nullptr;
+}
+Renderable* AssetManager::GetRenderable(std::string name)
 {
 	return nullptr;
 }

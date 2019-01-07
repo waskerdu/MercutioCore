@@ -57,6 +57,15 @@
     <ClInclude Include="meIni.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="meRenderable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -89,5 +98,17 @@
     <ClCompile Include="meIni.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="meRenderable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="meMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="preamble.glsl" />
   </ItemGroup>
 </Project>

@@ -198,6 +198,11 @@ void Ini::Clear()
 	}
 }
 
+Ini::Section* Ini::GetSection(std::string section)
+{
+	return data[section];
+}
+
 Ini::Ini()
 {
 }

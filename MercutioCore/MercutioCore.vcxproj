@@ -101,7 +101,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;libglew32d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\lib_debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -137,7 +137,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;libglew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -169,8 +169,11 @@
     <ClInclude Include="meEngine.h" />
     <ClInclude Include="meEntity.h" />
     <ClInclude Include="meIni.h" />
+    <ClInclude Include="meMaterial.h" />
     <ClInclude Include="meMath.h" />
     <ClInclude Include="meMemoryManager.h" />
+    <ClInclude Include="meMesh.h" />
+    <ClInclude Include="meRenderable.h" />
     <ClInclude Include="meRenderer.h" />
     <ClInclude Include="meTestEnv.h" />
     <ClInclude Include="meTransform.h" />
@@ -184,8 +187,11 @@
     <ClCompile Include="meEngine.cpp" />
     <ClCompile Include="meEntity.cpp" />
     <ClCompile Include="meIni.cpp" />
+    <ClCompile Include="meMaterial.cpp" />
     <ClCompile Include="meMemoryManager.cpp" />
+    <ClCompile Include="meMesh.cpp" />
     <ClCompile Include="MercutioCore.cpp" />
+    <ClCompile Include="meRenderable.cpp" />
     <ClCompile Include="meRenderer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -193,6 +199,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="preamble.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
