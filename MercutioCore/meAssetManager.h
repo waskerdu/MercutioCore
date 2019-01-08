@@ -14,6 +14,7 @@ class AssetManager
 	std::map<std::string, Mesh*> meshes;
 	std::map<std::string, Material*> materials;
 	std::map<std::string, Renderable*> renderables;
+	std::map<std::string, GLuint*> shaders;
 public:
 	void Init();
 	void LoadPage(std::string name);

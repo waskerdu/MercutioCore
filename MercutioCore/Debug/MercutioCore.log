@@ -1,5 +1,4 @@
-﻿  meEngine.cpp
-  meAssetManager.cpp
-  MercutioCore.cpp
+﻿  meParser.cpp
+  meInput.cpp
   Generating Code...
   MercutioCore.vcxproj -> C:\Users\Riley\Documents\Visual Studio 2015\Projects\MercutioCore\Debug\MercutioCore.exe

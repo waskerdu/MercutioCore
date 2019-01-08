@@ -169,10 +169,12 @@
     <ClInclude Include="meEngine.h" />
     <ClInclude Include="meEntity.h" />
     <ClInclude Include="meIni.h" />
+    <ClInclude Include="meInput.h" />
     <ClInclude Include="meMaterial.h" />
     <ClInclude Include="meMath.h" />
     <ClInclude Include="meMemoryManager.h" />
     <ClInclude Include="meMesh.h" />
+    <ClInclude Include="meParser.h" />
     <ClInclude Include="meRenderable.h" />
     <ClInclude Include="meRenderer.h" />
     <ClInclude Include="meTestEnv.h" />
@@ -187,9 +189,11 @@
     <ClCompile Include="meEngine.cpp" />
     <ClCompile Include="meEntity.cpp" />
     <ClCompile Include="meIni.cpp" />
+    <ClCompile Include="meInput.cpp" />
     <ClCompile Include="meMaterial.cpp" />
     <ClCompile Include="meMemoryManager.cpp" />
     <ClCompile Include="meMesh.cpp" />
+    <ClCompile Include="meParser.cpp" />
     <ClCompile Include="MercutioCore.cpp" />
     <ClCompile Include="meRenderable.cpp" />
     <ClCompile Include="meRenderer.cpp" />

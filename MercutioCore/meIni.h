@@ -18,7 +18,9 @@
 };/**/
 class Ini
 {
+public:
 	typedef std::map<std::string, std::string> Section;
+private:
 
 	std::string filename;
 	std::map<std::string, Section*> data;
@@ -33,6 +35,7 @@ public:
 	void Set(std::string section, std::string key, std::string value);
 	void Set(std::string section, std::string key, int64_t value);
 	void Set(std::string section, std::string key, double value);
+	void GetSection(std::string section, std::vector<std::vector<std::string>>* values);
 	Section* GetSection(std::string section);
 	Ini();
 	~Ini();

@@ -198,6 +198,45 @@ void Ini::Clear()
 	}
 }
 
+void Ini::GetSection(std::string section, std::vector<std::vector<std::string>>* values)
+{
+	std::map<std::string, std::string>::iterator i;
+	for (i = data[section]->begin(); i != data[section]->end(); i++)
+	{
+		std::vector<std::string> vec;
+		vec.push_back(i->first);
+		//split string
+		std::string s = i->second;
+		size_t start = 0;
+		size_t end = s.find(' ');
+		while (end != std::string::npos)
+		{
+			vec.push_back(s.substr(start, end - start));
+			start = end + 1;
+			end = s.find(' ', start);
+		}
+		values->push_back(vec);
+	}
+}
+
+/*
+{
+std::string s = "scott>=tiger";
+std::string delim = ">=";
+
+auto start = 0U;
+auto end = s.find(delim);
+while (end != std::string::npos)
+{
+std::cout << s.substr(start, end - start) << std::endl;
+start = end + delim.length();
+end = s.find(delim, start);
+}
+
+std::cout << s.substr(start, end);
+}
+*/
+
 Ini::Section* Ini::GetSection(std::string section)
 {
 	return data[section];
