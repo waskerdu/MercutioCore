@@ -14,7 +14,12 @@ class AssetManager
 	std::map<std::string, Mesh*> meshes;
 	std::map<std::string, Material*> materials;
 	std::map<std::string, Renderable*> renderables;
-	std::map<std::string, GLuint*> shaders;
+	std::map<std::string, GLuint> shaders;
+	std::map<std::string, GLuint> textures;
+	std::string GetExtension(std::string filename);
+	const char* GetShaderCode(std::string filename);
+	void CreateShader(std::vector<std::string>* instructions);
+	bool CompileShader(unsigned int* handle, std::string filename, unsigned int type);
 public:
 	void Init();
 	void LoadPage(std::string name);

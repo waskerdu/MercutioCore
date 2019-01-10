@@ -215,6 +215,7 @@ void Ini::GetSection(std::string section, std::vector<std::vector<std::string>>*
 			start = end + 1;
 			end = s.find(' ', start);
 		}
+		vec.push_back(s.substr(start));
 		values->push_back(vec);
 	}
 }
