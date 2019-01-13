@@ -28,12 +28,22 @@ void DisplayManager::Init(Ini* ini)
 		modes = glfwGetVideoModes(monitors[i], &count);
 		monitorIndicies.push_back(i);
 		monitorStrings.push_back(std::to_string(i));
-		for (size_t f = 0; f < (size_t)count; f++)
+		refreshRates.push_back(modes[0].refreshRate);
+		refreshRateStrings.push_back(std::to_string(modes[0].refreshRate));
+		resolutions.push_back(std::pair<size_t, size_t>(modes[0].width, modes[0].height));
+		resolutionStrings.push_back(std::to_string(modes[0].width) + " " + std::to_string(modes[0].height));
+		for (size_t f = 1; f < (size_t)count; f++)
 		{
-			refreshRates.push_back(modes[f].refreshRate);
-			refreshRateStrings.push_back(std::to_string(modes[f].refreshRate));
-			resolutions.push_back(std::pair<size_t, size_t>(modes[f].width, modes[f].height));
-			resolutionStrings.push_back(std::to_string(modes[f].width) + " " + std::to_string(modes[f].height));
+			if (refreshRates.back() != modes[f].refreshRate)
+			{
+				refreshRates.push_back(modes[f].refreshRate);
+				refreshRateStrings.push_back(std::to_string(modes[f].refreshRate));
+			}
+			if (resolutions.back() != std::pair<size_t, size_t>(modes[f].width, modes[f].height))
+			{
+				resolutions.push_back(std::pair<size_t, size_t>(modes[f].width, modes[f].height));
+				resolutionStrings.push_back(std::to_string(modes[f].width) + " " + std::to_string(modes[f].height));
+			}
 		}
 	}
 	if (mode.mode == DisplayMode::window)

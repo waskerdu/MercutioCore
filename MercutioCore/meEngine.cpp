@@ -36,7 +36,6 @@ void Engine::TerminalOptionsMenu()
 		switch (input)
 		{
 		case('r') :
-			std::cout << displayManager.GetResolutions()->size();
 			for (i = 0; i < displayManager.GetResolutions()->size(); i++)
 			{
 				std::cout << "[" << i << "] " << displayManager.GetResolutions()->at(i) << "\n";

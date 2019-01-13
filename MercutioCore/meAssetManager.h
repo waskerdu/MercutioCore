@@ -18,11 +18,12 @@ class AssetManager
 	std::map<std::string, GLuint> textures;
 	std::string GetExtension(std::string filename);
 	const char* GetShaderCode(std::string filename);
-	void CreateShader(std::vector<std::string>* instructions);
+	bool CreateShader(std::vector<std::string>* instructions);
 	bool CompileShader(unsigned int* handle, std::string filename, unsigned int type);
+	bool CreateTexture(std::vector<std::string>* instructions);
 public:
 	void Init();
-	void LoadPage(std::string name);
+	bool LoadPage(std::string name);
 	Mesh* GetMesh(std::string name);
 	Material* GetMaterial(std::string name);
 	Renderable* GetRenderable(std::string name);

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "stb_image.h"
 
 std::string AssetManager::GetExtension(std::string filename)
 {
@@ -28,13 +29,14 @@ void AssetManager::Init()
 	manifest.Load("gamedata/asset_manifest.ini");
 	LoadPage("init");
 }
-void AssetManager::LoadPage(std::string name)
+bool AssetManager::LoadPage(std::string name)
 {
 	std::vector<std::vector<std::string>> data;
 	std::vector<std::vector<std::string>> meshEntries;
 	std::vector<std::vector<std::string>> materialEntries;
 	std::vector<std::vector<std::string>> renderableEntries;
 	std::vector<std::vector<std::string>> shaderEntries;
+	std::vector<std::vector<std::string>> textureEntries;
 
 	manifest.GetSection(name, &data);
 	size_t i;
@@ -51,18 +53,27 @@ void AssetManager::LoadPage(std::string name)
 			//materials.insert(std::pair<std::string, Material*>(data[i][0], nullptr));
 			materialEntries.push_back(data[i]);
 		}
-		if (data[i][1] == "renderable")
+		else if (data[i][1] == "renderable")
 		{
 			//renderables.insert(std::pair<std::string, Renderable*>(data[i][0], nullptr));
 			renderableEntries.push_back(data[i]);
 		}
-		if (data[i][1] == "shader")
+		else if (data[i][1] == "shader")
 		{
 			//renderables.insert(std::pair<std::string, Renderable*>(data[i][0], nullptr));
 			shaderEntries.push_back(data[i]);
+		}
+		else if (data[i][1] == "texture")
+		{
+			//renderables.insert(std::pair<std::string, Renderable*>(data[i][0], nullptr));
+			textureEntries.push_back(data[i]);
 		}/**/
 	}
 
+	for (i = 0; i < textureEntries.size(); i++)
+	{
+		CreateTexture(&textureEntries.at(i));
+	}
 	for (i = 0; i < meshEntries.size(); i++)
 	{
 		//
@@ -75,9 +86,10 @@ void AssetManager::LoadPage(std::string name)
 	{
 		//
 	}/**/
+	return true;
 }
 
-void AssetManager::CreateShader(std::vector<std::string>* instructions)
+bool AssetManager::CreateShader(std::vector<std::string>* instructions)
 {
 	int success;
 	char infoLog[512];
@@ -115,8 +127,10 @@ void AssetManager::CreateShader(std::vector<std::string>* instructions)
 	{
 		glGetProgramInfoLog(id, 512, NULL, infoLog);
 		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		return false;
 	}
 	shaders.insert(std::pair<std::string, GLuint>(instructions->at(0), id));
+	return true;
 }
 bool AssetManager::CompileShader(unsigned int* handle, std::string filename, unsigned int type)
 {
@@ -135,6 +149,33 @@ bool AssetManager::CompileShader(unsigned int* handle, std::string filename, uns
 	};
 	return true;
 }
+
+bool AssetManager::CreateTexture(std::vector<std::string>* instructions)
+{
+	GLuint id = 0;
+	std::string alias = instructions->at(0);
+	std::string filename = instructions->at(1);
+	unsigned char* textureData;
+	glGenTextures(1, &id);
+	glBindTexture(GL_TEXTURE_2D, id);
+	int width, height, nrChannels;
+	stbi_set_flip_vertically_on_load(true);
+	textureData = stbi_load(filename.c_str(), &width, &height, &nrChannels, 0);
+	if (textureData)
+	{
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, textureData);
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	else
+	{
+		std::cout << filename << " failed to load.\n";
+		return false;
+	}
+	stbi_image_free(textureData);
+	textures.insert(std::pair<std::string, GLuint>(alias, id));
+	return true;
+}
+
 Mesh* AssetManager::GetMesh(std::string name)
 {
 	return nullptr;

@@ -1,2 +1,23 @@
-﻿  MercutioCore.cpp
-  MercutioCore.vcxproj -> C:\Users\Riley\documents\visual studio 2015\Projects\MercutioCore\Debug\MercutioCore.exe
+﻿  stb_image.cpp
+  meAssetManager.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  MercutioCore.cpp
+  meEngine.cpp
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(context.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(input.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(monitor.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(vulkan.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(window.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_init.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_joystick.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_monitor.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_time.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_tls.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(wgl_context.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(egl_context.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glfw.pdb'; linking object as if no debug info
+libglew32d.lib(glew.obj) : warning LNK4099: PDB 'glew_s.pdb' was not found with 'libglew32d.lib(glew.obj)' or at 'C:\Users\riley\Documents\MercutioCore\Debug\glew_s.pdb'; linking object as if no debug info
+  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.exe
+  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.pdb (Full PDB)
