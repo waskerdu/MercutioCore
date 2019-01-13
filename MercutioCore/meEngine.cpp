@@ -110,6 +110,7 @@ void Engine::Launch()
 	Ini settings;
 	settings.Load("gamedata/settings.ini");
 	displayManager.Init(&settings);
+	assetManager.Init();
 
 	//start game loop
 	while (gameRunning)
