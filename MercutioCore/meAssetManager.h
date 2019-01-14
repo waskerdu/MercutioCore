@@ -21,6 +21,7 @@ class AssetManager
 	bool CreateShader(std::vector<std::string>* instructions);
 	bool CompileShader(unsigned int* handle, std::string filename, unsigned int type);
 	bool CreateTexture(std::vector<std::string>* instructions);
+	//bool CreateMaterial(std::vector<std::string>* instructions);
 public:
 	void Init();
 	bool LoadPage(std::string name);
