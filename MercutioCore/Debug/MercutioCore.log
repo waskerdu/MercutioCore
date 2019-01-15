@@ -1,7 +1,7 @@
-﻿  MercutioCore.cpp
+﻿  meAssetManager.cpp
   Generating Code...
-  Skipping... (no relevant changes detected)
+  Compiling...
   meEngine.cpp
-  meAssetManager.cpp
-  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.exe
-  MercutioCore.vcxproj -> C:\Users\riley\Documents\MercutioCore\Debug\MercutioCore.pdb (Full PDB)
+  MercutioCore.cpp
+  Generating Code...
+  MercutioCore.vcxproj -> C:\Users\Riley\documents\visual studio 2015\Projects\MercutioCore\Debug\MercutioCore.exe

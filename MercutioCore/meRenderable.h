@@ -12,10 +12,10 @@
 class Renderable
 {
 	Mesh* mesh;
-	GLuint* shader;
-	GLuint texture;
+	Material* material;
 public:
-	Renderable();
+	void Render();
+	Renderable(Mesh* mesh, Material* material);
 	~Renderable();
 };
 

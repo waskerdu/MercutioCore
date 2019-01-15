@@ -9,13 +9,11 @@ class Material
 {
 	GLuint texture;
 	unsigned char* textureData;
-	GLuint* shaderProgram;
+	GLuint shaderProgram;
 
 public:
-	void Init(GLuint texture, GLuint* shaderProgram);
 	void UseMaterial();
-
-	Material();
+	Material(GLuint texture, GLuint shaderProgram);
 	~Material();
 };
 

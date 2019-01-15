@@ -13,7 +13,7 @@ class Mesh
 	unsigned int VBO = 0;
 	unsigned int VAO = 0;
 	unsigned int EBO = 0;
-	friend class AssetManager;
+	//friend class AssetManager;
 public:
 	unsigned int GetVAO();
 	unsigned int GetEBO();
