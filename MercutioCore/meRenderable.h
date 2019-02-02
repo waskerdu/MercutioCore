@@ -8,14 +8,17 @@
 #include "meMath.h"
 #include "meMesh.h"
 #include "meMaterial.h"
+#include "meAsset.h"
 
 class Renderable
 {
-	Mesh* mesh;
-	Material* material;
+	Asset* mesh;
+	Asset* material;
 public:
 	void Render();
-	Renderable(Mesh* mesh, Material* material);
+	Renderable(Asset* material, Asset* mesh);
+	void SetMesh(Asset* mesh);
+	void SetMaterial(Asset* material);
 	~Renderable();
 };
 

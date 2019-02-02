@@ -22,7 +22,7 @@ public:
 	void Init();
 	void Bind();
 	int GetSize();
-
+	Mesh(){}
 	Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
 	~Mesh();
 };

@@ -4,13 +4,16 @@
 #include <fstream>
 #include <sstream>
 #include "stb_image.h"
+#include "OBJ_Loader.h"
 
 void AssetManager::RegisterAssets()
 {
-	//
+	// collates all the assets in the game and prepares datastructures for them
+
+	// first generate all default assets (mesh, texture, shader, material)
 	std::vector<float> verts
 	{
-		//positions             //colors			    //texture coords
+		//positions             //normals			    //texture coords
 		50.0f,  50.0f, 0.0f,   1.0f, 0.0f, 0.0f,		1.0f, 1.0f,
 		50.0f, -50.0f, 0.0f,   0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
 		-50.0f, -50.0f, 0.0f,   0.0f, 0.0f, 1.0f,		0.0f, 0.0f,
@@ -21,8 +24,6 @@ void AssetManager::RegisterAssets()
 		1, 2, 3    // second triangle
 	};
 	Mesh* quadMesh = new Mesh(verts, indices);
-	//Asset* quadAsset = new Asset();
-	//quadAsset->data = quadMesh;
 	Asset quadAsset = Asset();
 	quadAsset.data = quadMesh;
 	quadAsset.isLoaded = true;
@@ -31,27 +32,24 @@ void AssetManager::RegisterAssets()
 
 	std::vector<std::vector<std::string>> data;
 	manifest.GetSection("game_assets", &data);
+	Asset asset = Asset();
 	for (size_t i = 0; i < data.size(); i++)
 	{
-		Asset asset = Asset();
 		asset.instructions = data[i];
+		asset.name = asset.instructions[0];
 		if (data[i][1] == "mesh")
 		{
 			meshes.insert(std::pair<std::string, Asset>(data[i][0], asset));
 		}
-		if (data[i][1] == "material")
+		else if (data[i][1] == "material")
 		{
 			materials.insert(std::pair<std::string, Asset>(data[i][0], asset));
 		}
-		if (data[i][1] == "renderable")
-		{
-			renderables.insert(std::pair<std::string, Asset>(data[i][0], asset));
-		}
-		if (data[i][1] == "texture")
+		else if (data[i][1] == "texture")
 		{
 			textures.insert(std::pair<std::string, Asset>(data[i][0], asset));
 		}
-		if (data[i][1] == "shader")
+		else if (data[i][1] == "shader")
 		{
 			shaders.insert(std::pair<std::string, Asset>(data[i][0], asset));
 		}
@@ -60,6 +58,8 @@ void AssetManager::RegisterAssets()
 
 void AssetManager::SetNotNeeded(std::map<std::string, Asset>* map)
 {
+	// mark all non-default objects as not needed
+	// utility method used to refresh needed assets
 	std::map<std::string, Asset>::iterator i;
 	for (i = map->begin(); i != map->end(); i++)
 	{
@@ -76,6 +76,7 @@ void AssetManager::SetNotNeeded(std::map<std::string, Asset>* map)
 
 void AssetManager::UnloadUnneeded(std::map<std::string, Asset>* map)
 {
+	// free memory of assets we don't need right now
 	std::map<std::string, Asset>::iterator i;
 	for (i = map->begin(); i != map->end(); i++)
 	{
@@ -84,6 +85,7 @@ void AssetManager::UnloadUnneeded(std::map<std::string, Asset>* map)
 			std::string alias = i->second.name;
 			map->at(alias).isLoaded = false;
 			delete map->at(alias).data;
+			map->at(alias).data = nullptr;
 		}
 	}
 }
@@ -193,9 +195,8 @@ bool AssetManager::LoadTexture(std::string alias)
 		return true;
 	}
 	GLuint id = 0;
-	std::vector<std::string>* instructions = &shaders[alias].instructions;
-	//std::string alias = instructions->at(0);
-	std::string filename = instructions->at(1);
+	std::vector<std::string>* instructions = &textures[alias].instructions;
+	std::string filename = instructions->at(2);
 	unsigned char* textureData;
 	glGenTextures(1, &id);
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -240,14 +241,14 @@ bool AssetManager::LoadMaterial(std::string alias)
 	if (textures[instructions->at(2)].isLoaded == false)
 	{
 		std::cout << "Texture " << instructions->at(2) << " is not loaded.\n";
-		LoadTexture(instructions->at(2));
+		if (!LoadTexture(instructions->at(2))) { return false; }
 	}
 	if (shaders.count(instructions->at(3)) == 0)
 	{
 		std::cout << "Failed to find shader " << instructions->at(3) << "\n";
 		return false;
 	}
-	if (textures[instructions->at(3)].isLoaded == false)
+	if (shaders[instructions->at(3)].isLoaded == false)
 	{
 		std::cout << "Shader " << instructions->at(3) << " is not loaded.\n";
 		LoadShader(instructions->at(3));
@@ -260,45 +261,43 @@ bool AssetManager::LoadMaterial(std::string alias)
 	return true;
 }
 
-bool AssetManager::LoadRenderable(std::string alias)
+bool AssetManager::LoadMesh(std::string alias)
 {
-	if (renderables.count(alias) == 0)
+	if (meshes.count(alias) == 0)
 	{
-		std::cout << "No shader named " << alias << " exists.\n";
+		std::cout << "No mesh named " << alias << " exists.\n";
 		return false;
 	}
-	if (renderables[alias].isLoaded)
+	if (meshes[alias].isLoaded)
 	{
 		return true;
 	}
-	std::vector<std::string>* instructions = &renderables[alias].instructions;
+	std::vector<std::string>* instructions = &meshes[alias].instructions;
 
-	if (meshes.count(instructions->at(2)) == 0)
+	objl::Loader loader;
+	loader.LoadFile(instructions->at(2));
+	std::vector<float> verts;
+	std::vector<unsigned int> indicies;
+	for (size_t i = 0; i < loader.LoadedVertices.size(); i++)
 	{
-		std::cout << "Failed to find mesh " << instructions->at(2) << "\n";
-		return false;
+		verts.push_back(loader.LoadedVertices[i].Position.X);
+		verts.push_back(loader.LoadedVertices[i].Position.Y);
+		verts.push_back(loader.LoadedVertices[i].Position.Z);
+		verts.push_back(loader.LoadedVertices[i].Normal.X);
+		verts.push_back(loader.LoadedVertices[i].Normal.Y);
+		verts.push_back(loader.LoadedVertices[i].Normal.Z);
+		verts.push_back(loader.LoadedVertices[i].TextureCoordinate.X);
+		verts.push_back(loader.LoadedVertices[i].TextureCoordinate.Y);
 	}
-	if (meshes[instructions->at(2)].isLoaded == false)
+
+	for (size_t i = 0; i < loader.LoadedIndices.size(); i++)
 	{
-		std::cout << "Mesh " << instructions->at(2) << " is not loaded.\n";
-		//LoadMesh(instructions->at(3));
-		return false;
+		indicies.push_back(loader.LoadedIndices[i]);
 	}
-	if (materials.count(instructions->at(3)) == 0)
-	{
-		std::cout << "Failed to find material " << instructions->at(3) << "\n";
-		return false;
-	}
-	if (materials[instructions->at(3)].isLoaded == false)
-	{
-		//std::cout << "Material " << instructions->at(3) << " is not loaded.\n";
-		LoadMaterial(instructions->at(3));
-	}
-	Mesh* mesh = (Mesh*)meshes[instructions->at(2)].data;
-	Material* material = (Material*)materials[instructions->at(3)].data;
-	renderables[alias].data = new Renderable(mesh, material);
-	renderables[alias].isLoaded = true;
-	renderables[alias].isNeeded = true;
+	
+	meshes[alias].data = new Mesh(verts, indicies);
+	meshes[alias].isLoaded = true;
+	meshes[alias].isNeeded = true;
 	return true;
 }
 
@@ -309,20 +308,22 @@ void AssetManager::Init()
 	RegisterAssets();
 	//load minimal assets
 	LoadPage("init");
-	
 }
-bool AssetManager::LoadPage(std::string name)
+
+void AssetManager::SetNotNeeded()
 {
-	//set all assets to "not needed"
+	// calls SetNotNeeded on all assets
 	SetNotNeeded(&meshes);
 	SetNotNeeded(&materials);
 	SetNotNeeded(&textures);
 	SetNotNeeded(&shaders);
-	SetNotNeeded(&renderables);
+}
 
+bool AssetManager::LoadPage(std::string pageName)
+{
 	//for all assets in the page set them to needed and load them
 	std::vector<std::vector<std::string>> data;
-	manifest.GetSection(name, &data);
+	manifest.GetSection(pageName, &data);
 
 	for (size_t i = 0; i < data.size(); i++)
 	{
@@ -330,7 +331,7 @@ bool AssetManager::LoadPage(std::string name)
 		{
 			for (size_t f = 1; f < data[i].size(); f++)
 			{
-
+				LoadMesh(data[i][f]);
 			}
 		}
 		if (data[i][0] == "textures")
@@ -354,105 +355,44 @@ bool AssetManager::LoadPage(std::string name)
 				LoadMaterial(data[i][f]);
 			}
 		}
-		if (data[i][0] == "renderables")
-		{
-			for (size_t f = 1; f < data[i].size(); f++)
-			{
-				LoadMaterial(data[i][f]);
-			}
-		}
 	}
+	return true;
+}
 
+void AssetManager::UnloadUnneeded()
+{
 	//for all assets if they are not needed unload them
 	UnloadUnneeded(&meshes);
 	UnloadUnneeded(&materials);
 	UnloadUnneeded(&textures);
 	UnloadUnneeded(&shaders);
-	UnloadUnneeded(&renderables);
-	return true;
 }
 
-/*bool AssetManager::CreateShader(std::vector<std::string>* instructions)
+bool AssetManager::GetRenderable(Renderable* renderable, std::string materialName, std::string meshName)
 {
-	int success;
-	char infoLog[512];
-	GLuint id;
-	size_t i;
-	unsigned int shaderHandle;
-	id = glCreateProgram();
-	for (i = 0; i < instructions->size(); i++)
+	if (materials.count(materialName) == 0)
 	{
-		if (GetExtension(instructions->at(i)) == "vert")
-		{
-			if (CompileShader(&shaderHandle, instructions->at(i), GL_VERTEX_SHADER))
-			{
-				glAttachShader(id, shaderHandle);
-				glDeleteShader(shaderHandle);
-				break;
-			}
-		}
-	}
-	for (i = 0; i < instructions->size(); i++)
-	{
-		if (GetExtension(instructions->at(i)) == "frag")
-		{
-			if (CompileShader(&shaderHandle, instructions->at(i), GL_FRAGMENT_SHADER))
-			{
-				glAttachShader(id, shaderHandle);
-				glDeleteShader(shaderHandle);
-				break;
-			}
-		}
-	}
-	glLinkProgram(id);
-	glGetProgramiv(id, GL_LINK_STATUS, &success);
-	if (!success)
-	{
-		glGetProgramInfoLog(id, 512, NULL, infoLog);
-		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		std::cout << "Failed to find material " << materialName << "\n";
 		return false;
 	}
-	shaders.insert(std::pair<std::string, GLuint>(instructions->at(0), id));
-	return true;
-}
-
-bool AssetManager::CreateTexture(std::vector<std::string>* instructions)
-{
-	GLuint id = 0;
-	std::string alias = instructions->at(0);
-	std::string filename = instructions->at(1);
-	unsigned char* textureData;
-	glGenTextures(1, &id);
-	glBindTexture(GL_TEXTURE_2D, id);
-	int width, height, nrChannels;
-	stbi_set_flip_vertically_on_load(true);
-	textureData = stbi_load(filename.c_str(), &width, &height, &nrChannels, 0);
-	if (textureData)
+	if (materials[materialName].isLoaded == false)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, textureData);
-		glGenerateMipmap(GL_TEXTURE_2D);
+		std::cout << "Material " << materialName << " is not loaded.\n";
+		if (!LoadMaterial(materialName)) { return false; }
 	}
-	else
+	if (meshes.count(meshName) == 0)
 	{
-		std::cout << filename << " failed to load.\n";
+		std::cout << "Failed to find mesh " << meshName << "\n";
 		return false;
 	}
-	stbi_image_free(textureData);
-	textures.insert(std::pair<std::string, GLuint>(alias, id));
+	if (meshes[meshName].isLoaded == false)
+	{
+		std::cout << "Mesh " << meshName << " is not loaded.\n";
+		if (!LoadMesh(meshName)) { return false; }
+	}
+	renderable->SetMaterial(&materials[materialName]);
+	renderable->SetMesh(&meshes[meshName]);
 	return true;
-}
-
-Mesh* AssetManager::GetMesh(std::string name)
-{
-	return nullptr;
-}
-Material* AssetManager::GetMaterial(std::string name)
-{
-	return nullptr;
-}/**/
-Renderable* AssetManager::GetRenderable(std::string name)
-{
-	return nullptr;
 }
 
 AssetManager::AssetManager()
@@ -462,4 +402,13 @@ AssetManager::AssetManager()
 
 AssetManager::~AssetManager()
 {
+	SetNotNeeded(&meshes);
+	SetNotNeeded(&materials);
+	SetNotNeeded(&textures);
+	SetNotNeeded(&shaders);
+
+	UnloadUnneeded(&meshes);
+	UnloadUnneeded(&materials);
+	UnloadUnneeded(&textures);
+	UnloadUnneeded(&shaders);
 }
